@@ -3,29 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            background: #111;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h1 {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            background: #ff9800;
+            color: #111;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 80px 40px;
+            background: #fff;
+        }
+
+        .about h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* PROJECTS */
+        .projects {
+            padding: 80px 40px;
+            background: #f0f0f0;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project h3 {
+            margin: 15px 0;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 60px 40px;
+            background: #111;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #000;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Awesome Website</h1>
-        <p>Your DevOps Learning Journey Starts Here 🚀</p>
-    </header>
 
-    <section class="content">
+    <!-- NAVBAR -->
+    <nav>
+        <h1>My Portfolio</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Hello, I'm Vishal 👋</h1>
+            <p>DevOps Engineer | Cloud Enthusiast | Automation Lover</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
         <h2>About Me</h2>
         <p>
-            I am learning DevOps — Jenkins, Git, Docker, AWS, Kubernetes.
-            This is my sample demo website deployed via Git & Jenkins.
+            I am a DevOps Engineer passionate about automation, cloud technologies,
+            CI/CD pipelines, and infrastructure as code.  
+            I love building scalable systems and learning new technologies every day.
         </p>
+    </section>
 
-        <h2>Contact</h2>
-        <p>Email: vsalaria758@gmail.com</p>
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+
+        <div class="project-container">
+
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1581093588401-22b4a3e6c8af" alt="">
+                <h3>Jenkins CI/CD Pipeline</h3>
+                <p>Automated build & deployment pipeline for production-ready environments.</p>
+            </div>
+
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67" alt="">
+                <h3>AWS Infrastructure Setup</h3>
+                <p>Built secure, scalable cloud architecture using Terraform + EC2 + VPC.</p>
+            </div>
+
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="">
+                <h3>Docker & Kubernetes</h3>
+                <p>Microservices containerised & deployed on Kubernetes cluster.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:vishal@example.com">vishal@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/">github.com/yourprofile</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/">linkedin.com/in/yourprofile</a></p>
     </section>
 
     <footer>
-        <p>© 2025 My Website | Made with ❤️</p>
+        © 2025 Vishal | All Rights Reserved
     </footer>
+
 </body>
 </html>
-
