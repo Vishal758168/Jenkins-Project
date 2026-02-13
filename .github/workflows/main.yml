@@ -22,7 +22,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd Jenkins-Project
+          cd /home/ubuntu/Jenkins-Project
           git pull origin main
           docker stop jenkins-container || true
           docker rm jenkins-container || true
