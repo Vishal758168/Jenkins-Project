@@ -9,12 +9,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Step 1: Checkout code
     - name: Checkout Code
       uses: actions/checkout@v3
 
+    # Step 2: Build Docker image locally (optional, can test build on runner)
     - name: Build Docker Image
-      run: docker build -t jenkins-project .
+      run: docker build -t project .
 
+    # Step 3: Deploy to EC2
     - name: Deploy to EC2
       uses: appleboy/ssh-action@v0.1.10
       with:
@@ -22,9 +25,25 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
+          # Ensure the project directory exists
+          if [ ! -d "/home/ubuntu/Jenkins-Project" ]; then
+            git clone https://github.com/Vishal758168/Jenkins-Project.git /home/ubuntu/Jenkins-Project
+          fi
+
           cd /home/ubuntu/Jenkins-Project
+
+          # Pull the latest code
           git pull origin main
-          docker stop jenkins-project || true
-          docker rm jenkins-project || true
-          docker build -t jenkins-project .
-          docker run -d -p 80:80 --name jenkins-container jenkins-project
+
+          # Stop and remove old container if exists
+          docker stop jenkins-container || true
+          docker rm jenkins-container || true
+
+          # Build Docker image on EC2
+          docker build -t project .
+
+          # Run the container with a fixed name
+          docker run -d -p 80:80 --name jenkins-container project
+
+          # Verify it's running
+          docker ps
