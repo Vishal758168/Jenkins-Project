@@ -24,7 +24,7 @@ jobs:
         script: |
           cd /home/ubuntu/Jenkins-Project
           git pull origin main
-          docker stop project || true
-          docker rm project || true
+          docker stop jenkins-project || true
+          docker rm jenkins-project || true
           docker build -t jenkins-project .
           docker run -d -p 80:80 --name jenkins-container jenkins-project
