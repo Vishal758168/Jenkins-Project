@@ -27,9 +27,9 @@ jobs:
         script: |
           # Ensure the project directory exists
           if [ ! -d "/home/ubuntu/Jenkins-Project" ]; then
-            git clone https://github.com/Vishal758168/Jenkins-Project.git /home/ubuntu/Jenkins-Project
-        
-
+            git clone https://github.com/Vishal758168/Jenkins-Project.git 
+            /home/ubuntu/Jenkins-Project
+             fi
           cd /home/ubuntu/Jenkins-Project
 
           # Pull the latest code
