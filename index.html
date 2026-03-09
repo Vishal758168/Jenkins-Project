@@ -1,82 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <h1>My Portfolio</h1>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">DevOpsPortfolio</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="darkModeBtn">🌙</button>
+  </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div>
-            <h1>Hello, I'm Vishal 👋</h1>
-            <p>DevOps Engineer | Cloud Enthusiast | Automation Lover</p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Hello, I am <span id="typed"></span></h1>
+    <p>Professional DevOps Engineer | Cloud & Automation Specialist</p>
+    <a href="#projects" class="btn">See My Work</a>
+  </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a DevOps Engineer passionate about automation, cloud technologies,
-            CI/CD pipelines, and infrastructure as code.  
-            I love building scalable systems and learning new technologies every day.
-        </p>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="reveal">
+    <h2>About Me</h2>
+    <p>I am a DevOps engineer focused on automating deployments, building CI/CD pipelines, managing cloud infrastructure, and ensuring reliable, scalable systems.</p>
+  </section>
 
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-        <h2>My Projects</h2>
+  <!-- Skills Section -->
+  <section id="skills" class="reveal">
+    <h2>Skills & Tools</h2>
+    <div class="skills-grid">
+      <div class="skill">Docker</div>
+      <div class="skill">Kubernetes</div>
+      <div class="skill">Jenkins</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">AWS / Azure / GCP</div>
+      <div class="skill">Terraform</div>
+      <div class="skill">Ansible</div>
+      <div class="skill">Prometheus & Grafana</div>
+    </div>
+  </section>
 
-        <div class="project-container">
+  <!-- Projects Section -->
+  <section id="projects" class="reveal">
+    <h2>Projects</h2>
+    <div class="project-cards">
+      <div class="card">
+        <h3>CI/CD Pipeline Automation</h3>
+        <p>Implemented Jenkins pipeline for automated testing and deployment to Kubernetes cluster.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud Infrastructure with Terraform</h3>
+        <p>Provisioned scalable AWS infrastructure using Terraform scripts with best practices.</p>
+      </div>
+      <div class="card">
+        <h3>Monitoring & Logging</h3>
+        <p>Set up Prometheus and Grafana dashboards to monitor application performance and system metrics.</p>
+      </div>
+    </div>
+  </section>
 
-            <div class="project">
-                <img src="https://images.unsplash.com/photo-1581093588401-22b4a3e6c8af" alt="">
-                <h3>Jenkins CI/CD Pipeline</h3>
-                <p>Automated build & deployment pipeline for production-ready environments.</p>
-            </div>
+  <!-- Certifications Section -->
+  <section id="certifications" class="reveal">
+    <h2>Certifications</h2>
+    <ul>
+      <li>AWS Certified DevOps Engineer – Professional</li>
+      <li>Certified Kubernetes Administrator (CKA)</li>
+      <li>Docker Certified Associate</li>
+    </ul>
+  </section>
 
-            <div class="project">
-                <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67" alt="">
-                <h3>AWS Infrastructure Setup</h3>
-                <p>Built secure, scalable cloud architecture using Terraform + EC2 + VPC.</p>
-            </div>
+  <!-- Contact Section -->
+  <section id="contact" class="reveal">
+    <h2>Contact Me</h2>
+    <p>Email: vsalaria758@gamil.come@email.com</p>
+    <p>LinkedIn: <a href="https://linkedin.com/">Your LinkedIn</a></p>
+    <p>GitHub: <a href="https://github.com/">Vishal758168</a></p>
+  </section>
 
-            <div class="project">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="">
-                <h3>Docker & GithubAction</h3>
-                <p>Microservices containerised & deployed on Kubernetes cluster.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:vsalaria758@gmail.com">vsalaria758@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/">github.com/Vishal758168</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/">linkedin.com/in/yourprofile</a></p>
-    </section>
-
-    <footer>
-        © 2025 Vishal | All Rights Reserved
-    </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
