@@ -65,7 +65,7 @@ stages:
         manifests: |
           $(Pipeline.Workspace)/manifests/myapp.yaml
         containers: |
-          myproject.azurecr.io/$(imageRepository):$(Build.BuildId)
+          $(containerRegistry)/$(imageRepository):$(Build.BuildId)
         rolloutStatusTimeout: 120
 
     - task: Kubernetes@1
