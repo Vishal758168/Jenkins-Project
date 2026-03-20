@@ -68,5 +68,13 @@ stages:
           myproject.azurecr.io/$(imageRepository):$(Build.BuildId)
         rolloutStatusTimeout: 120
 
+    - task: Kubernetes@1
+      displayName: 'Check pods'
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceConnection: 'test2'
+        command: get
+        arguments: 'pods -n default'
+
 
 
