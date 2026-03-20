@@ -12,11 +12,11 @@ spec:
       labels:
         app: myapp
     spec:
-      nodeSelector:
-        kubernetes.io/arch: arm64  # Matches your node architecture
+      #nodeSelector:
+       # kubernetes.io/arch: arm64  # Matches your nod
       containers:
       - name: myapp
-        image: myproject.azurecr.io/myapp:latest
+        image: myproject.azurecr.io/sampleapp:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
