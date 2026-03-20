@@ -33,12 +33,11 @@ stages:
         tags: |
           $(tag)
           latest
-
-           - task: PublishPipelineArtifact@1
-             inputs:
-                targetPath: '$(Pipeline.Workspace)/myapp.yaml'
-                artifact: 'manifests'
-                publishLocation: 'pipeline'
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Pipeline.Workspace)/myapp.yaml'
+        artifact: 'manifests'
+        publishLocation: 'pipeline'
 
 - stage: Deploy
   displayName: Deploy to Dev
