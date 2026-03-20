@@ -35,7 +35,7 @@ stages:
           latest
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '$(Pipeline.Workspace)/myapp.yaml'
+        targetPath: '$(Build.SourcesDirectory)/myapp.yaml'
         artifact: 'manifests'
         publishLocation: 'pipeline'
 
