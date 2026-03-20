@@ -56,3 +56,17 @@ stages:
         targetPath: '$(Pipeline.Workspace)/manifests'
 
 
+    - task: KubernetesManifest@1
+      inputs:
+        action: 'deploy'
+        connectionType: 'kubernetesServiceConnection'
+        kubernetesServiceConnection: 'test2'
+        namespace: 'default'
+        manifests: |
+          $(Pipeline.Workspace)/manifests/myapp.yaml
+        containers: |
+          myproject.azurecr.io/$(imageRepository):$(Build.BuildId)
+        rolloutStatusTimeout: '2m'
+
+
+
