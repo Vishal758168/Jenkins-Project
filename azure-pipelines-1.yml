@@ -6,7 +6,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '81f3b2dc-e1cf-4a17-a623-4bdc67245fd1'
+  dockerRegistryServiceConnection: 'test1'
   imageRepository: 'sampleapp'
   containerRegistry: 'test1'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
