@@ -63,7 +63,7 @@ stages:
         kubernetesServiceConnection: 'test2'
         namespace: 'default'
         manifests: |
-          $(Build.SourcesDirectory)/manifests/myapp.yaml
+          $(Pipeline.Workspace)/manifests/myapp.yaml
         containers: 
           myproject.azurecr.io/$(imageRepository):$(Build.BuildId)
           
