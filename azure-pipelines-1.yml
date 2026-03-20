@@ -64,5 +64,8 @@ stages:
         namespace: 'default'
         manifests: |
           $(Pipeline.Workspace)/manifests/myapp.yaml
+        containers: 
+          myproject.azurecr.io/myapp:$(Build.BuildId)
+          
 
 
